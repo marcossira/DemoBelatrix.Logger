@@ -23,8 +23,7 @@ namespace DemoBelatrix.ConsoleApp
             jobLogger.LogMessage("hola1", MessageLogType.Message);
             jobLogger.LogMessage("hola2", MessageLogType.Warning);
             jobLogger.LogMessage("hola3", MessageLogType.Error);
-            Console.Read();
-            
+            Console.Read();            
         }
     }
 }
