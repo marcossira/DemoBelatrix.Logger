@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DemoBelatrix.Logger
 {
-    public class Class1
+    public interface ILogManager
     {
+        void LogMessage(string message, MessageLogType messageLog);
     }
 }

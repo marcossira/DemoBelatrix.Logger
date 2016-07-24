@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A1E03FEB-BBF7-4AA1-9E59-22C3C55D5B76}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{24A12B70-4804-4EA9-B63F-4C34A9C3C76B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DemoBelatrix.Logger</RootNamespace>
-    <AssemblyName>DemoBelatrix.Logger</AssemblyName>
+    <RootNamespace>DemoBelatrix.ConsoleApp</RootNamespace>
+    <AssemblyName>DemoBelatrix.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,7 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,16 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigurationLog.cs" />
-    <Compile Include="Exceptions\ConfigurationLogException.cs" />
-    <Compile Include="ILogManager.cs" />
-    <Compile Include="JobLogger.cs" />
-    <Compile Include="Enums.cs" />
-    <Compile Include="LogBase.cs" />
-    <Compile Include="LogStrategy\LogToConsole.cs" />
-    <Compile Include="LogStrategy\LogToDB.cs" />
-    <Compile Include="LogStrategy\LogToTextFile.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoBelatrix.Logger\DemoBelatrix.Logger.csproj">
+      <Project>{a1e03feb-bbf7-4aa1-9e59-22c3c55d5b76}</Project>
+      <Name>DemoBelatrix.Logger</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
